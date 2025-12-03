@@ -112,14 +112,24 @@ if (scholarBtn && scholarTooltip) {
     }
   });
 }
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+// ===== Scroll reveal for sections =====
+const revealEls = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add("reveal-visible"));
 }
 
-.reveal.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
