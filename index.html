@@ -2,48 +2,53 @@
   <path fill="#495863" d="M0,96 C120,150 240,60 360,110 C480,160 600,60 720,100 C840,140 960,80 1080,120 C1200,160 1320,90 1440,120 L1440,160 L0,160 Z"></path>
 </svg>
 
-<section id="education" aria-labelledby="edu-head">
-  <div class="section-head wrap">
-    <h2 id="edu-head">Education</h2>
-    <p>Engineering the future with a strong foundation.</p>
+<section class="education-section" id="education">
+  <div class="education-header-wrapper">
+    <h2 class="education-header" id="edu-head">Education</h2>
+    <p class="education-subtext">Engineering My Future Through Education At:</p>
   </div>
-  <div class="cards edu">
-    <div class="card">
+
+  <div class="education-cards">
+    <div class="education-card">
       <h3>IIT Madras</h3>
       <p>M.S., Aerospace Engineering</p>
-      <small>2023 – present</small>
+      <p>2023 – present</p>
     </div>
-    <div class="card">
+    <div class="education-card">
       <h3>VSSUT Burla</h3>
       <p>B.Tech, Electrical Engineering</p>
-      <small>2018 – 2022</small>
+      <p>2018 – 2022</p>
     </div>
   </div>
 </section>
 
-<section id="experience" aria-labelledby="exp-head">
-  <div class="section-head wrap">
-    <h2 id="exp-head">Experience</h2>
-    <p>From analytical guidance laws to flight‑ready systems.</p>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <h3>ISRO — Autonomous Mars Landing Project</h3>
-      <p><strong>Research Intern</strong> -  2024 – 2028 (ongoing)</p>
-      <ul>
-        <li>Autonomous guidance for precision landing with terrain awareness and fuel efficiency.</li>
-        <li>Free‑final‑time optimization, bounded thrust, thrust‑lag modeling, and decreasing‑horizon MPC.</li>
-        <li>High‑fidelity simulations with realistic terrain, navigation uncertainty, and propulsion dynamics.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Teaching Assistant</h3>
-      <p>Flight Dynamics, Intro to Aerospace Engineering -  2024</p>
-      <ul>
-        <li>Prepared/evaluated assignments and exams; supported complex concept clarification.</li>
-        <li>Collaborated to streamline coursework and assessment processes.</li>
-      </ul>
-    </div>
+<section class="experience-section" id="experience">
+  <h2 class="experience-header" id="exp-head">Experience</h2>
+  <div class="experience-timeline">
+    <article class="experience-card">
+      <time class="exp-date">2024 – 2028 (Ongoing)</time>
+      <div class="exp-details">
+        <h3>ISRO — Autonomous Mars Landing Project</h3>
+        <h4>Research Intern</h4>
+        <ul>
+          <li>Autonomous guidance for precision landing with terrain awareness and fuel efficiency.</li>
+          <li>Free-final-time optimization, bounded thrust, thrust-lag modeling, and decreasing-horizon MPC.</li>
+          <li>High-fidelity simulations with realistic terrain, navigation uncertainty, and propulsion dynamics.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="experience-card">
+      <time class="exp-date">2024</time>
+      <div class="exp-details">
+        <h3>Teaching Assistant</h3>
+        <h4>Flight Dynamics, Intro to Aerospace Engineering</h4>
+        <ul>
+          <li>Prepared/evaluated assignments and exams; supported complex concept clarification.</li>
+          <li>Collaborated to streamline coursework and assessment processes.</li>
+        </ul>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -77,74 +82,76 @@
   </div>
 </section>
 
-<section id="services" aria-labelledby="svc-head">
-  <div class="section-head wrap">
-    <h2 id="svc-head">Services</h2>
-    <p>What you deliver to teams and projects.</p>
-  </div>
-  <div class="wrap carousel">
-    <div class="nav">
-      <button type="button" id="prevSvc" aria-label="Previous services">←</button>
-      <button type="button" id="nextSvc" aria-label="Next services">→</button>
+<section class="services-section" id="services">
+  <div class="services-container">
+    <!-- Skills column -->
+    <div class="skills-box">
+      <h2 class="skills-title" id="svc-head">Accumulated Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-pill">Optimal Control</span>
+        <span class="skill-pill">Trajectory Optimization</span>
+        <span class="skill-pill">Model Predictive Control</span>
+        <span class="skill-pill">State Estimation</span>
+        <span class="skill-pill">Robust/Sliding Control</span>
+        <span class="skill-pill">Aerospace Simulation</span>
+      </div>
     </div>
-    <div class="track" id="svcTrack">
-      <article class="slide">
-        <h3>Autonomous Guidance & Navigation</h3>
-        <p>Fuel‑efficient trajectory design, adaptive control, and obstacle avoidance for precise missions.</p>
-      </article>
-      <article class="slide">
-        <h3>Optimal Control & Real‑Time Flight Software</h3>
-        <p>MPC and trajectory replanning to maximize safety and performance under dynamic conditions.</p>
-      </article>
-      <article class="slide">
-        <h3>Aerospace Simulation & Validation</h3>
-        <p>High‑fidelity environments with terrain, propulsion, and sensor realism for rigorous testing.</p>
-      </article>
-      <article class="slide">
-        <h3>Integrated Flight Systems Consulting</h3>
-        <p>From algorithm design to system integration and prototyping for flight‑ready stacks.</p>
-      </article>
-      <article class="slide">
-        <h3>Technical Training & Mentorship</h3>
-        <p>Workshops on flight dynamics, autonomous control, and guidance algorithms.</p>
-      </article>
+
+    <!-- Services + carousel -->
+    <div class="services-info">
+      <h2 class="services-title">Services</h2>
+      <p class="services-subtitle">What I can do for you</p>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev-btn" aria-label="Previous service">←</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-card">
+              <h3>Autonomous Guidance & Navigation</h3>
+              <p>Fuel-efficient trajectory design, adaptive control, and obstacle avoidance.</p>
+            </li>
+            <li class="carousel-card">
+              <h3>Optimal Control & Real-Time Flight Software</h3>
+              <p>MPC and trajectory replanning to maximize safety and performance.</p>
+            </li>
+            <li class="carousel-card">
+              <h3>Aerospace Simulation & Validation</h3>
+              <p>High-fidelity environments with terrain, propulsion, and sensor realism.</p>
+            </li>
+            <li class="carousel-card">
+              <h3>Integrated Flight Systems Consulting</h3>
+              <p>End-to-end support from algorithm design to system integration.</p>
+            </li>
+            <li class="carousel-card">
+              <h3>Technical Training & Mentorship</h3>
+              <p>Workshops on flight dynamics and autonomous control.</p>
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next-btn" aria-label="Next service">→</button>
+      </div>
     </div>
-  </div>
-  <div class="wrap pillbox" aria-label="Skills">
-    <span class="pill">Optimal Control</span>
-    <span class="pill">Trajectory Optimization</span>
-    <span class="pill">Model Predictive Control</span>
-    <span class="pill">State Estimation</span>
-    <span class="pill">Robust/Sliding Control</span>
-    <span class="pill">Aerospace Simulation</span>
   </div>
 </section>
 
-<section id="contact" aria-labelledby="contact-head">
-  <div class="section-head wrap">
-    <h2 id="contact-head">Get in touch</h2>
-    <p>Reach out for collaborations, consulting, or speaking.</p>
+<div class="contact-transition"></div>
+
+<section class="contact-section" id="contact">
+  <h2 class="contact-header" id="contact-head">
+    Interested in reaching out? <br>
+    Find me here:
+  </h2>
+
+  <div class="contact-methods">
+    <a href="https://www.instagram.com/raj_abhishek_barad" class="contact-link" target="_blank" rel="noopener">📷 Instagram</a>
+    <a href="https://www.linkedin.com/in/abhishekbarad/" class="contact-link" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    <a href="https://github.com/raj-abhishek-barad" class="contact-link" target="_blank" rel="noopener">💻 GitHub</a>
   </div>
-  <div class="contact">
-    <form action="https://formspree.io/f/xyzpavbd" method="POST" aria-label="Contact form">
-      <label for="name">Your name</label>
-      <input id="name" name="name" type="text" required />
-      <label for="email">Your email</label>
-      <input id="email" name="email" type="email" required />
-      <label for="message">Your message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-      <button class="send" type="submit">Send</button>
-    </form>
-    <div class="card">
-      <h3>Direct</h3>
-      <p>Prefer DM or a quick call?</p>
-      <div class="links">
-        <a href="https://www.instagram.com/raj_abhishek_barad" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/in/abhishekbarad/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/raj-abhishek-barad" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <p style="margin-top:10px">Phone: +91 6370272948</p>
-      <p>Location: Chennai, India</p>
-    </div>
-  </div>
+
+  <br><br>
+  Can't reach out through these? <br>
+  here's my number: +91 6370272948 <br>
+  + <br>
+  <b>Email embedded form found in my about me!</b>
 </section>
+
