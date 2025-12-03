@@ -1,0 +1,613 @@
+/* ========== Global Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #263238;
+  color: #ffffff;
+  padding-top: 80px; /* space for fixed header */
+}
+
+/* ========== Header & Nav ========== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #01161e;
+  z-index: 9999;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #66bb6a;
+  white-space: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #66bb6a;
+  transition: width 0.3s;
+  margin-top: 4px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ========== Social Icons (Header) ========== */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: transform 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #66bb6a;
+  transform: scale(1.2);
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-pic img {
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transform: rotate(-5deg);
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* typed text line */
+#dynamic-text,
+.typed-text {
+  color: #84a98c;
+  transition: color 0.5s ease;
+}
+
+.cursor {
+  display: inline-block;
+}
+
+/* intro block if you use .intro wrapper */
+.intro h3 {
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+/* Call to action button */
+.hire-button {
+  background-color: #66bb6a;
+  border: none;
+  padding: 0.1rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hire-button:hover {
+  background-color: #57a05a;
+}
+
+/* ========== Education Section ========== */
+.education-section {
+  background: linear-gradient(to bottom, #495863, #2f3e46);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.education-header-wrapper {
+  margin-bottom: 40px;
+}
+
+.education-header {
+  color: #85bc90;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.education-subtext {
+  color: #b0e6c2;
+  font-size: 1rem;
+}
+
+.education-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.education-card {
+  background: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 270px;
+  padding: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.education-card h3 {
+  color: #212529;
+}
+
+.education-card p {
+  color: #6c757d;
+}
+
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* CV download block under education */
+.cv-download-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.cv-text {
+  font-size: 1rem;
+  color: #b0e6c2;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.cv-button {
+  display: inline-block;
+  background-color: #1cb88f;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 0 8px #1cb88f80;
+}
+
+.cv-button:hover {
+  background-color: #179f7b;
+}
+
+/* ========== Wave Transition Above Experience ========== */
+.wave-transition-top svg {
+  display: block;
+  width: 100%;
+  height: 160px;
+  transform: rotate(180deg);
+  background-color: #121a22;
+}
+
+/* ========== Experience Section ========== */
+.experience-section {
+  background-color: #121a22;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.experience-header {
+  color: #84a98c;
+  text-shadow: 0 0 10px #1c622a, 0 0 20px #1c622a;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: #cad2c5;
+  border-left: 5px solid #1cb88f;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px 30px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.experience-card:hover {
+  background: #ffffff;
+  transform: translateY(-5px);
+}
+
+.exp-date {
+  font-weight: bold;
+  color: #1cb88f;
+  margin-right: 20px;
+  min-width: 120px;
+}
+
+.exp-details h3 {
+  margin: 0;
+  color: #212529;
+}
+
+.exp-details h4 {
+  color: #000000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.exp-details p {
+  color: #6c757d;
+  margin-top: 8px;
+}
+
+/* ensure list text is always visible / dark */
+.experience-card .exp-details ul,
+.experience-card .exp-details ul li {
+  color: #000000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
+}
+
+/* ========== Wave Transition Into Services ========== */
+.wave-transition-services {
+  height: 50px;
+  overflow: hidden;
+  background-color: #2f3f45;
+}
+
+.wave-transition-services svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ========== Services Section (Skills + Carousel) ========== */
+.services-section {
+  background-color: #2f3f45;
+  padding: 80px 20px;
+  color: #cce3d3;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* Skills box */
+.skills-box {
+  background-color: #1c2b30;
+  padding: 35px;
+  border-radius: 13px;
+  max-width: 450px;
+  flex: 1;
+}
+
+.skills-title {
+  color: #a8dab5;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skill-pill {
+  background-color: #2e4248;
+  color: #a8dab5;
+  border: 1px solid #75c99a;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Services info + carousel */
+.services-info {
+  max-width: 80%;
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.services-title {
+  font-size: 2rem;
+  color: #a8dab5;
+  margin-bottom: 0.25rem;
+  margin-left: -80px;
+}
+
+.services-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #d9e8e1;
+  margin-left: -40px;
+}
+
+/* If you still use bullet list style (not carousel) */
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 70px;
+}
+
+.services-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 1rem;
+  color: #e2f3e8;
+  line-height: 1;
+}
+
+.services-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  background-color: #8fcba0;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #8fcba099;
+}
+
+/* Carousel */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin-left: 20px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  flex: 1;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-card {
+  min-width: 100%;
+  background: #cad2c5;
+  color: #212529;
+  border-left: 6px solid #1cb88f;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  user-select: none;
+}
+
+.carousel-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.carousel-card p {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  color: #8fcba0;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  color: #1cb88f;
+}
+
+/* ========== Contact Section ========== */
+.contact-transition {
+  height: 100px;
+  background: linear-gradient(to bottom, #2f3f45, #1b252b);
+}
+
+.contact-section {
+  background-color: #1b252b;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-header {
+  font-size: 2rem;
+  color: #a8dab5;
+  margin-bottom: 2rem;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  background-color: #2e4248;
+  color: #a8dab5;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid #75c99a;
+  box-shadow: 0 0 6px #8fcba0aa;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: #1cb88f;
+  color: #ffffff;
+}
+
+/* Tooltip for Scholar button */
+.click-tooltip {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #1cb88f;
+  color: #ffffff;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 6px;
+  white-space: nowrap;
+  max-width: 200px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact form button */
+.send-button {
+  padding: 12px;
+  background-color: #52796f;
+  color: #cad2c5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.send-button:hover {
+  box-shadow: 0 0 10px #52796f, 0 0 20px #52796f;
+}
+
+/* ========== Responsive Tweaks ========== */
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-container {
+    margin-left: 0;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .services-info {
+    max-width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .services-title,
+  .services-subtitle {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .experience-card {
+    flex-direction: column;
+  }
+
+  .exp-date {
+    margin-bottom: 10px;
+  }
+}
