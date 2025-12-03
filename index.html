@@ -69,32 +69,57 @@
 <section id="projects" aria-labelledby="proj-head">
   <div class="section-head wrap">
     <h2 id="proj-head">Highlighted projects</h2>
-    <p>Selected work that showcases your core strengths.</p>
+    <p class="projects-subtitle">Selected work that showcases my core strengths.</p>
   </div>
-  <div class="wrap grid-3">
-    <div class="card proj">
-      <h4>3D Sliding‑Mode Landing Guidance</h4>
-      <p>Position/velocity convergence with barrier terms for terrain clearance and thrust‑cone projection.</p>
-      <div class="pillbox">
-        <span class="pill">Python</span><span class="pill">Control</span><span class="pill">Simulation</span>
+
+  <div class="wrap projects-grid">
+    <article class="project-card">
+      <div class="project-header">
+        <h3>3D Sliding‑Mode Landing Guidance</h3>
+        <span class="project-role">Guidance & Control</span>
       </div>
-    </div>
-    <div class="card proj">
-      <h4>Visual‑Inertial EKF Navigation</h4>
-      <p>Robust state estimation in GPS‑denied conditions with observability‑aware sensor fusion.</p>
-      <div class="pillbox">
-        <span class="pill">EKF</span><span class="pill">VIO</span><span class="pill">Aerospace</span>
+      <p class="project-text">
+        3D sliding‑mode landing law with barrier terms for terrain clearance and thrust‑cone projection.
+      </p>
+      <div class="project-tags">
+        <span>Python</span>
+        <span>Sliding‑mode</span>
+        <span>Simulation</span>
       </div>
-    </div>
-    <div class="card proj">
-      <h4>Decreasing‑Horizon MPC Descent</h4>
-      <p>Real‑time trajectory replanning under constraints for safe, efficient terminal descent.</p>
-      <div class="pillbox">
-        <span class="pill">MPC</span><span class="pill">Optimization</span><span class="pill">C++/Python</span>
+    </article>
+
+    <article class="project-card">
+      <div class="project-header">
+        <h3>Visual‑Inertial EKF Navigation</h3>
+        <span class="project-role">State Estimation</span>
       </div>
-    </div>
+      <p class="project-text">
+        Visual‑inertial EKF for GPS‑denied navigation with observability‑aware sensor fusion.
+      </p>
+      <div class="project-tags">
+        <span>EKF</span>
+        <span>VIO</span>
+        <span>Aerospace</span>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-header">
+        <h3>Decreasing‑Horizon MPC Descent</h3>
+        <span class="project-role">Optimal Control</span>
+      </div>
+      <p class="project-text">
+        Decreasing‑horizon MPC for constrained terminal descent with real‑time trajectory replanning.
+      </p>
+      <div class="project-tags">
+        <span>MPC</span>
+        <span>Optimization</span>
+        <span>C++ / Python</span>
+      </div>
+    </article>
   </div>
 </section>
+
 
 <section class="services-section" id="services">
   <div class="services-container">
