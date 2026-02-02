@@ -2,234 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Abhishek Barad — Aerospace Guidance & Control. Research, projects, publications, and contact." />
-  <meta name="color-scheme" content="light dark" />
-  <title>Abhishek Barad — Aerospace Guidance & Control</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Abhishek Barad — Aerospace Guidance & Control" />
+  <title>Abhishek Barad</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="top">
-    <div class="wrap header-grid">
-      <div class="avatar" aria-hidden="true">
-        <img src="assets/img/profile.svg" alt="" />
-      </div>
-
+  <header class="top">
+    <div class="wrap">
       <div class="hero">
-        <h1 class="title">Abhishek Barad</h1>
-        <p class="subtitle">Aerospace Guidance & Control</p>
-        <p class="meta">
-          M.S., Aerospace Engineering • IIT Madras<br />
-          Research interests: fuel‑optimal powered descent, constrained optimal control, estimation & real‑time autonomy
-        </p>
+        <div class="hero-left">
+          <div class="name">Abhishek Barad</div>
+          <div class="tagline">Aerospace Guidance & Control · Optimal Control · MPC · Navigation</div>
+          <div class="meta">
+            <span>M.S., Aerospace Engineering (IIT Madras, 2023–present)</span>
+            <span>·</span>
+            <span>B.Tech, Electrical Engineering (VSSUT Burla, 2018–2022)</span>
+          </div>
 
-        <div class="links">
-          <a class="pill" href="https://github.com/raj-abhishek-barad" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="pill" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="pill" href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-          <a class="pill" href="#contact">Contact</a>
-          <!-- Optional: replace with your CV pdf path -->
-          <a class="pill" href="assets/AbhishekBarad_CV.pdf">CV (PDF)</a>
+          <div class="links">
+            <a class="pill" href="#contact">Email</a>
+            <a class="pill" href="https://github.com/raj-abhishek-barad" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="pill" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="pill" href="#cv">CV</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="avatar" aria-label="Profile image placeholder">
+            <span>AB</span>
+          </div>
+          <button id="themeToggle" class="ghost" type="button" aria-label="Toggle theme">Theme</button>
         </div>
       </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#vitae">Vitae</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <nav class="site-nav" aria-label="Primary">
-    <div class="wrap nav-row">
-      <a class="brand" href="#top" aria-label="Back to top">AB</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-      <ul class="nav-list" id="navList">
-        <li><a href="#about">About</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#vitae">Vitae</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main id="main">
-    <section class="section wrap" id="about">
+  <main class="wrap">
+    <section id="about" class="section">
       <h2>About</h2>
-      <div class="prose">
-        <p>
-          I work on autonomous planetary landing guidance and estimation, with an emphasis on fuel‑optimal descent under
-          tight constraints (terrain clearance, bounded thrust, thrust lag, and navigation uncertainty).
-          My current focus is on bridging closed‑form guidance structure with online replanning (receding/decreasing‑horizon MPC),
-          and building simulation infrastructure for rigorous comparisons.
-        </p>
-        <ul class="bullets">
-          <li>Free‑final‑time and constrained optimal control formulations for powered descent</li>
-          <li>Barrier / corridor constraints for terrain safety</li>
-          <li>Real‑time replanning and robustness under model mismatch and state‑estimation error</li>
-        </ul>
-      </div>
+      <p>
+        I work on autonomous planetary landing guidance with an emphasis on fuel efficiency and safety under constraints.
+        My recent work spans free-final-time optimization, bounded thrust, thrust-lag modeling, and decreasing-horizon MPC,
+        validated in simulation with terrain and navigation uncertainty.
+      </p>
     </section>
 
-    <section class="section wrap" id="news">
+    <section id="news" class="section">
       <h2>News</h2>
-      <ul class="news" id="newsList">
-        <li><span class="date">2026‑02‑02</span><span class="item">Website refreshed with a single‑page academic layout.</span></li>
-        <li><span class="date">2025‑XX‑XX</span><span class="item">Add your recent items here (paper submission, talk, award, etc.).</span></li>
+      <ul class="bullets">
+        <li><span class="date">2024–2028</span> Research Intern — ISRO: Autonomous Mars Landing Project (ongoing)</li>
+        <li><span class="date">2024</span> Teaching Assistant — Flight Dynamics, Intro to Aerospace Engineering</li>
+        <li><span class="date">2023–present</span> M.S., Aerospace Engineering — IIT Madras</li>
       </ul>
     </section>
 
-    <section class="section wrap" id="publications">
+    <section id="publications" class="section">
       <h2>Publications</h2>
-      <p class="muted">Cards are data‑driven; edit <code>assets/js/main.js</code> to add items.</p>
-      <div class="card-grid" id="pubGrid" aria-live="polite"></div>
-    </section>
+      <p class="muted">
+        Add your papers here. If you paste your publication list (title, authors, venue, year, links), I can format it into
+        zmanaa-style cards with “Paper / Code / BibTeX”.
+      </p>
 
-    <section class="section wrap" id="projects">
-      <h2>Highlighted projects</h2>
-      <p class="muted">Selected work that showcases core strengths.</p>
-
-      <div class="card-grid">
-        <article class="card">
-          <h3>3D Sliding‑Mode Landing Guidance</h3>
-          <p class="kicker">Guidance &amp; Control</p>
-          <p>3D sliding‑mode landing law with barrier terms for terrain clearance and thrust‑cone projection.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">Optimal control</span><span class="tag">Barrier surfaces</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Visual‑Inertial EKF Navigation</h3>
-          <p class="kicker">State Estimation</p>
-          <p>Visual‑inertial EKF for GPS‑denied navigation with observability‑aware sensor fusion.</p>
-          <div class="tags">
-            <span class="tag">EKF</span><span class="tag">VIO</span><span class="tag">Simulation</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Decreasing‑Horizon MPC Descent</h3>
-          <p class="kicker">Optimal Control</p>
-          <p>Decreasing‑horizon MPC for constrained terminal descent with real‑time trajectory replanning.</p>
-          <div class="tags">
-            <span class="tag">MPC</span><span class="tag">Constraints</span><span class="tag">Real‑time</span>
+      <div class="pubs">
+        <article class="pub">
+          <div class="pub-thumb" aria-hidden="true"></div>
+          <div class="pub-body">
+            <div class="pub-title">[Your paper title here]</div>
+            <div class="pub-authors">Authors…</div>
+            <div class="pub-venue">Venue / status…</div>
+            <div class="pub-links">
+              <a href="#" onclick="return false;">Paper</a>
+              <a href="#" onclick="return false;">Code</a>
+              <a href="#" onclick="return false;">BibTeX</a>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section wrap" id="vitae">
+    <section id="vitae" class="section">
       <h2>Vitae</h2>
-
-      <div class="two-col">
-        <div>
-          <h3 class="h3">Education</h3>
-          <div class="timeline">
-            <div class="titem">
-              <div class="twhen">2023 – present</div>
-              <div class="twhat">
-                <div class="torg">IIT Madras</div>
-                <div class="trole">M.S., Aerospace Engineering</div>
-              </div>
-            </div>
-
-            <div class="titem">
-              <div class="twhen">2018 – 2022</div>
-              <div class="twhat">
-                <div class="torg">VSSUT Burla</div>
-                <div class="trole">B.Tech, Electrical Engineering</div>
-              </div>
-            </div>
+      <div class="timeline">
+        <div class="row">
+          <div class="when">2024–2028</div>
+          <div class="what">
+            <div class="role">Research Intern — ISRO (Autonomous Mars Landing Project)</div>
+            <div class="desc">Precision landing guidance with terrain awareness, fuel efficiency, bounded thrust, thrust-lag, and MPC replanning.</div>
           </div>
         </div>
-
-        <div>
-          <h3 class="h3">Experience</h3>
-          <div class="timeline">
-            <div class="titem">
-              <div class="twhen">2024 – 2028 (ongoing)</div>
-              <div class="twhat">
-                <div class="torg">ISRO — Autonomous Mars Landing Project</div>
-                <div class="trole">Research Intern</div>
-                <ul class="small-bullets">
-                  <li>Precision landing with terrain awareness and fuel efficiency</li>
-                  <li>Free‑final‑time optimization, bounded thrust, thrust‑lag modeling</li>
-                  <li>High‑fidelity simulations with terrain, navigation uncertainty, propulsion dynamics</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="titem">
-              <div class="twhen">2024</div>
-              <div class="twhat">
-                <div class="torg">Teaching Assistant</div>
-                <div class="trole">Flight Dynamics, Intro to Aerospace Engineering</div>
-                <ul class="small-bullets">
-                  <li>Prepared/evaluated assignments and exams; supported concept clarification</li>
-                  <li>Helped streamline coursework and assessment processes</li>
-                </ul>
-              </div>
-            </div>
+        <div class="row">
+          <div class="when">2024</div>
+          <div class="what">
+            <div class="role">Teaching Assistant</div>
+            <div class="desc">Prepared/evaluated assignments and exams; supported concept clarification and course workflow.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="when">2023–present</div>
+          <div class="what">
+            <div class="role">M.S., Aerospace Engineering — IIT Madras</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="when">2018–2022</div>
+          <div class="what">
+            <div class="role">B.Tech, Electrical Engineering — VSSUT Burla</div>
           </div>
         </div>
       </div>
 
-      <h3 class="h3">Skills</h3>
-      <div class="chip-row">
-        <span class="chip">Optimal Control</span>
-        <span class="chip">Trajectory Optimization</span>
-        <span class="chip">Model Predictive Control</span>
-        <span class="chip">State Estimation</span>
-        <span class="chip">Robust/Sliding Control</span>
-        <span class="chip">Aerospace Simulation</span>
+      <div id="cv" class="cvbox">
+        <div class="cvtitle">CV</div>
+        <div class="muted">Put your CV PDF in the repo as <code>AbhishekBarad_CV.pdf</code> and this link will work.</div>
+        <a class="pill" href="AbhishekBarad_CV.pdf" target="_blank" rel="noreferrer">Open CV (PDF)</a>
       </div>
     </section>
 
-    <section class="section wrap" id="services">
+    <section id="projects" class="section">
+      <h2>Highlighted projects</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>3D Sliding-Mode Landing Guidance</h3>
+          <div class="chips"><span>Guidance & Control</span><span>Python</span></div>
+          <p>3D sliding-mode landing law with barrier terms for terrain clearance and thrust-cone projection.</p>
+        </article>
+
+        <article class="card">
+          <h3>Visual-Inertial EKF Navigation</h3>
+          <div class="chips"><span>State Estimation</span><span>VIO</span></div>
+          <p>Visual-inertial EKF for GPS-denied navigation with observability-aware sensor fusion.</p>
+        </article>
+
+        <article class="card">
+          <h3>Decreasing-Horizon MPC Descent</h3>
+          <div class="chips"><span>Optimal Control</span><span>C++ / Python</span></div>
+          <p>Decreasing-horizon MPC for constrained terminal descent with real-time trajectory replanning.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="tagcloud">
+        <span>Optimal Control</span>
+        <span>Trajectory Optimization</span>
+        <span>Model Predictive Control</span>
+        <span>State Estimation</span>
+        <span>Robust/Sliding Control</span>
+        <span>Aerospace Simulation</span>
+      </div>
+    </section>
+
+    <section id="services" class="section">
       <h2>Services</h2>
-      <p class="muted">A lightweight carousel (keyboard + swipe) similar in spirit to your current layout.</p>
 
-      <div class="carousel" aria-label="Services carousel">
-        <button class="car-btn" id="carPrev" aria-label="Previous">←</button>
-
-        <div class="car-track" id="serviceTrack" tabindex="0">
-          <!-- cards injected by JS -->
+      <div class="slider" aria-label="Services slider">
+        <button class="slider-btn" id="prevBtn" type="button" aria-label="Previous">←</button>
+        <div class="slider-viewport" id="sliderViewport">
+          <div class="slider-track" id="sliderTrack">
+            <div class="slide">
+              <h3>Autonomous Guidance & Navigation</h3>
+              <p>Fuel-efficient trajectory design, adaptive control, and obstacle avoidance.</p>
+            </div>
+            <div class="slide">
+              <h3>Optimal Control & Real-Time Flight Software</h3>
+              <p>MPC and trajectory replanning to maximize safety and performance.</p>
+            </div>
+            <div class="slide">
+              <h3>Aerospace Simulation & Validation</h3>
+              <p>High-fidelity environments with terrain, propulsion, and sensor realism.</p>
+            </div>
+            <div class="slide">
+              <h3>Integrated Flight Systems Consulting</h3>
+              <p>End-to-end support from algorithm design to system integration.</p>
+            </div>
+            <div class="slide">
+              <h3>Technical Training & Mentorship</h3>
+              <p>Workshops on flight dynamics and autonomous control.</p>
+            </div>
+          </div>
         </div>
-
-        <button class="car-btn" id="carNext" aria-label="Next">→</button>
+        <button class="slider-btn" id="nextBtn" type="button" aria-label="Next">→</button>
       </div>
     </section>
 
-    <section class="section wrap" id="contact">
-      <h2>Interested in reaching out?</h2>
-      <div class="prose">
-        <p>Find me here:</p>
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div class="muted">Quick links:</div>
         <div class="links">
           <a class="pill" href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
           <a class="pill" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="pill" href="https://github.com/raj-abhishek-barad" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="pill" href="mailto:you@example.com">Email</a>
         </div>
 
-        <p class="muted small">
-          Replace the placeholder email/links above. If you prefer not to show a phone number publicly, keep contact to email + social links.
+        <p class="muted">
+          Tip: your current site publicly shows a phone number. If you don’t want that indexed by search engines, remove it.
         </p>
       </div>
     </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Abhishek Barad</div>
+      <div class="muted">Built as a static site for GitHub Pages.</div>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap foot-row">
-      <span>© <span id="year"></span> Abhishek Barad</span>
-      <span class="foot-right">Built with plain HTML/CSS/JS • Hosted on GitHub Pages</span>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
