@@ -1,0 +1,28 @@
+name: Abhishek Barad
+title_line: "M.S. Scholar, Aerospace Engineering (IIT Madras)"
+affiliation: "Guidance & Control · Optimal Control · MPC · Navigation"
+emails:
+  - "your.name@smail.iitm.ac.in"
+  - "you@gmail.com"
+profile_image: "/assets/img/profile.svg"
+cv_url: "/assets/AbhishekBarad_CV.pdf"
+
+links:
+  - label: GitHub
+    url: "https://github.com/raj-abhishek-barad"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/"
+  - label: Instagram
+    url: "https://www.instagram.com/"
+
+about_paragraphs:
+  - "I work on autonomous planetary landing guidance with an emphasis on fuel efficiency and safety under constraints. My recent work spans free-final-time optimization, bounded thrust, thrust-lag modeling, and decreasing-horizon MPC validated in simulation with terrain and navigation uncertainty."
+  - "I am interested in the interface between optimal control, real-time guidance, and robust navigation, especially where hard constraints must be enforced online."
+
+keywords:
+  - "Free-final-time guidance and fuel-optimal descent"
+  - "Constrained thrust (magnitude / cone) and thrust-lag dynamics"
+  - "Receding-horizon / decreasing-horizon MPC for terminal descent"
+  - "State estimation and navigation error modeling"
+
+gallery_blurb: "A small gallery section (like the original) — replace these images with your own."

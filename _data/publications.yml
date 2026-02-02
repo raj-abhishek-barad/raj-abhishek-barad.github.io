@@ -1,0 +1,14 @@
+- title: "Hybrid Closed-Form and Time-Optimized Guidance for Autonomous Planetary Soft Landing"
+  authors: "Abhishek Barad, Satadal Ghosh"
+  venue: "Manuscript in preparation"
+  image: "/assets/img/pub_placeholder.svg"
+  paper_url: ""
+  poster_url: ""
+  code_url: ""
+  bibtex: |
+    @misc{barad2026guidance,
+      title        = {Hybrid Closed-Form and Time-Optimized Guidance for Autonomous Planetary Soft Landing},
+      author       = {Barad, Abhishek and Ghosh, Satadal},
+      year         = {2026},
+      note         = {Manuscript in preparation}
+    }

@@ -1,0 +1,11 @@
+<article class="card">
+  <div class="thumb">
+    <img src="{{ include.t.image | relative_url }}" alt="{{ include.t.course }} thumbnail">
+  </div>
+  <div class="body">
+    <div class="title">{{ include.t.course }}</div>
+    <div class="authors">{{ include.t.role }}</div>
+    <div class="venue">{{ include.t.venue }} · {{ include.t.location }} · {{ include.t.date }}</div>
+    <div class="desc">{{ include.t.description }}</div>
+  </div>
+</article>

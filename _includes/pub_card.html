@@ -1,0 +1,22 @@
+<article class="card">
+  <div class="thumb">
+    <img src="{{ include.pub.image | relative_url }}" alt="{{ include.pub.title }} thumbnail">
+  </div>
+  <div class="body">
+    <div class="title">
+      {% if include.pub.page_url %}
+        <a href="{{ include.pub.page_url }}" {% if include.pub.page_url contains 'http' %}target="_blank" rel="noreferrer"{% endif %}>{{ include.pub.title }}</a>
+      {% else %}
+        {{ include.pub.title }}
+      {% endif %}
+    </div>
+    <div class="authors">{{ include.pub.authors }}</div>
+    <div class="venue">{{ include.pub.venue }}</div>
+    <div class="links">
+      {% if include.pub.paper_url %}<a href="{{ include.pub.paper_url }}" target="_blank" rel="noreferrer">Paper</a>{% endif %}
+      {% if include.pub.poster_url %}<a href="{{ include.pub.poster_url }}" target="_blank" rel="noreferrer">Poster</a>{% endif %}
+      {% if include.pub.code_url %}<a href="{{ include.pub.code_url }}" target="_blank" rel="noreferrer">Code</a>{% endif %}
+      {% if include.pub.bibtex %}<a href="#" class="bibtex" data-bib="{{ include.pub.bibtex | escape }}">BibTeX</a>{% endif %}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,17 @@
+title: Abhishek Barad
+email: your-email@example.com
+description: >-
+  Abhishek Barad — Aerospace guidance & control, optimal control, MPC, navigation.
+url: "https://raj-abhishek-barad.github.io"
+baseurl: ""
+
+markdown: kramdown
+
+# GitHub Pages builds with safe mode; keep plugins minimal.
+# If you later want, you can add: theme: minima
+# but this template uses custom layouts/includes so a theme isn't required.
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

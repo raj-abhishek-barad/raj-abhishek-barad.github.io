@@ -1,0 +1,8 @@
+- image: "/assets/img/gallery_1.svg"
+  alt: "Typography sample 1"
+- image: "/assets/img/gallery_2.svg"
+  alt: "Typography sample 2"
+- image: "/assets/img/gallery_3.svg"
+  alt: "Typography sample 3"
+- image: "/assets/img/gallery_4.svg"
+  alt: "Typography sample 4"
