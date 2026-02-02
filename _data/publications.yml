@@ -1,14 +1,16 @@
-- title: "Hybrid Closed-Form and Time-Optimized Guidance for Autonomous Planetary Soft Landing"
+- title: "A Fuel-Efficient Free-Final-Time Guidance for Terrain-Avoided Precision Soft Landing of Spacecraft"
   authors: "Abhishek Barad, Satadal Ghosh"
-  venue: "Manuscript in preparation"
+  venue: "2025 IEEE 64th Conference on Decision and Control (CDC)"
   image: "/assets/img/pub_placeholder.svg"
   paper_url: ""
   poster_url: ""
   code_url: ""
   bibtex: |
-    @misc{barad2026guidance,
-      title        = {Hybrid Closed-Form and Time-Optimized Guidance for Autonomous Planetary Soft Landing},
-      author       = {Barad, Abhishek and Ghosh, Satadal},
-      year         = {2026},
-      note         = {Manuscript in preparation}
+    @inproceedings{barad2025fuel,
+      title={A Fuel-Efficient Free-Final-Time Guidance for Terrain-Avoided Precision Soft Landing of Spacecraft},
+      author={Barad, Abhishek and Ghosh, Satadal},
+      booktitle={2025 IEEE 64th Conference on Decision and Control (CDC)},
+      pages={948--953},
+      year={2025},
+      organization={IEEE}
     }
