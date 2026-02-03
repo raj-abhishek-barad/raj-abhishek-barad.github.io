@@ -1,4 +1,4 @@
-# Abhishek Barad — Academic one‑page (Jekyll / GitHub Pages)
+# Abhishek Barad 
 
 This repo talks about my work:
 - single-page layout with anchored nav (About / News / Publications / Teaching / Gallery / Vitae)
