@@ -103,16 +103,16 @@ body{
   gap:10px;
 }
 .avatar{
-  width: 76px;
-  height: 92px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  display:grid;
-  place-items:center;
-  box-shadow: var(--shadow);
-  font-weight: 700;
-  font-family: var(--serif);
+  width: 120px;
+  height: 145px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  display:grid;
+  place-items:center;
+  box-shadow: var(--shadow);
+  font-weight: 700;
+  font-family: var(--serif);
 }
 .avatar img{
   width: 100%;
