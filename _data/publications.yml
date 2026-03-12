@@ -2,5 +2,5 @@
   authors: "Abhishek Barad and Satadal Ghosh"
   venue: "2025 IEEE 64th Conference on Decision and Control (CDC)"
   paper_url: "https://ieeexplore.ieee.org/abstract/document/11313021"
-  image: "/assets/free_final_time_sim.gif" # Update this with your actual image path
+  image: "/assets/free_final_time_sim.gif"
   bibtex: "@inproceedings{barad2025fuel, title={A Fuel-Efficient Free-Final-Time Guidance for Terrain-Avoided Precision Soft Landing of Spacecraft}, author={Barad, Abhishek and Ghosh, Satadal}, booktitle={2025 IEEE 64th Conference on Decision and Control (CDC)}, year={2025}, organization={IEEE}}"
