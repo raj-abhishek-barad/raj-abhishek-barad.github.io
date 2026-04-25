@@ -1,84 +1,320 @@
 ---
 layout: default
 ---
-
 {% assign p = site.data.profile %}
 
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<div class="hero">
+  <div class="bg-glyph hero-bg-glyph" aria-hidden="true">AB</div>
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div class="hero-left">
+        <span class="hero-eyebrow fade-in">
+          Aerospace · Guidance &amp; Control
+        </span>
+
+        <h1 class="hero-name fade-in fade-in-d1">
+          Abhishek<br><em>Barad</em>
+        </h1>
+
+        <p class="hero-field fade-in fade-in-d2">
+          {{ p.tagline | default: "Researcher · Engineer · Educator" }}
+        </p>
+
+        <p class="hero-desc fade-in fade-in-d3">
+          {{ p.about_paragraphs[0] | default: "I work at the intersection of optimal control, model predictive control, and aerospace navigation — building guidance systems that are both rigorous and practical." }}
+        </p>
+
+        <div class="hero-links fade-in fade-in-d4">
+          {% if p.email %}
+            <a href="mailto:{{ p.email }}" class="pill primary">✉ Email me</a>
+          {% endif %}
+          {% if p.cv_url %}
+            <a href="{{ p.cv_url | relative_url }}" class="pill" target="_blank" rel="noreferrer">↓ Curriculum Vitæ</a>
+          {% endif %}
+          {% if p.scholar %}
+            <a href="{{ p.scholar }}" class="pill" target="_blank" rel="noreferrer">Scholar ↗</a>
+          {% endif %}
+          {% if p.github %}
+            <a href="{{ p.github }}" class="pill" target="_blank" rel="noreferrer">GitHub ↗</a>
+          {% endif %}
+          {% if p.linkedin %}
+            <a href="{{ p.linkedin }}" class="pill" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          {% endif %}
+          {% if p.twitter %}
+            <a href="{{ p.twitter }}" class="pill" target="_blank" rel="noreferrer">Twitter ↗</a>
+          {% endif %}
+        </div>
+      </div><!-- /hero-left -->
+
+      <div class="hero-right fade-in fade-in-d2">
+        <div class="avatar-frame">
+          {% if p.avatar %}
+            <div class="avatar-border"></div>
+            <img src="{{ p.avatar | relative_url }}" alt="Photo of Abhishek Barad">
+          {% else %}
+            <div class="avatar-border"></div>
+            <div class="avatar-inner">
+              <span class="avatar-initials">AB</span>
+              <span class="avatar-label">Abhishek Barad</span>
+            </div>
+          {% endif %}
+          <div class="avatar-corner-br"></div>
+          <div class="avatar-corner-tl"></div>
+        </div>
+      </div>
+
+    </div><!-- /hero-grid -->
+  </div><!-- /wrap -->
+</div><!-- /hero -->
+
+
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
 <section id="about" class="section">
-  <h2>About</h2>
-  {% for para in p.about_paragraphs %}
-    <p>{{ para }}</p>
-  {% endfor %}
-  {% if p.keywords %}
-  <ul class="bullets">
-    {% for k in p.keywords %}
-      <li>{{ k }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
+  <div class="wrap">
+
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label fade-in">About</div>
+        <h2 class="fade-in">A little <em>about</em> me</h2>
+
+        {% for para in p.about_paragraphs %}
+          <p class="fade-in">{{ para }}</p>
+        {% endfor %}
+
+        {% if p.keywords %}
+          <ul class="bullets fade-in">
+            {% for k in p.keywords %}
+              <li>{{ k }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if p.skills %}
+          <div class="tagcloud fade-in">
+            {% for skill in p.skills %}
+              <span>{{ skill }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="tagcloud fade-in">
+            <span>Optimal Control</span>
+            <span>MPC</span>
+            <span>Navigation</span>
+            <span>Guidance Systems</span>
+            <span>Python</span>
+            <span>MATLAB</span>
+            <span>C++</span>
+            <span>Research</span>
+            <span>LaTeX</span>
+          </div>
+        {% endif %}
+      </div><!-- /about-text -->
+
+      <div class="about-right">
+        <div class="about-stats">
+          <div class="stat-card fade-in">
+            <span class="stat-num">{{ p.stats.papers | default: "—" }}</span>
+            <span class="stat-label">Publications</span>
+          </div>
+          <div class="stat-card fade-in fade-in-d1">
+            <span class="stat-num">{{ p.stats.years | default: "—" }}</span>
+            <span class="stat-label">Years research</span>
+          </div>
+          <div class="stat-card fade-in fade-in-d2">
+            <span class="stat-num">{{ p.stats.courses | default: "—" }}</span>
+            <span class="stat-label">Courses taught</span>
+          </div>
+          <div class="stat-card fade-in fade-in-d3">
+            <span class="stat-num">{{ p.stats.institutes | default: "—" }}</span>
+            <span class="stat-label">Institutions</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /about-grid -->
+  </div><!-- /wrap -->
 </section>
 
+
+<!-- ══════════════════════════════════════════
+     NEWS
+══════════════════════════════════════════ -->
 <section id="news" class="section">
-  <h2>News</h2>
-  <ul class="news">
-    {% for n in site.data.news %}
-      <li><span class="date">[{{ n.date }}]</span>&nbsp;&nbsp;{{ n.text }}</li>
-    {% endfor %}
-  </ul>
+  <div class="wrap">
+    <div class="section-label fade-in">Latest</div>
+    <h2 class="fade-in">News &amp; <em>updates</em></h2>
+    <ul class="news">
+      {% for n in site.data.news %}
+        <li class="fade-in">
+          <span class="date">{{ n.date }}</span>
+          <span class="news-text">{{ n.text }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
+
+<!-- ══════════════════════════════════════════
+     PUBLICATIONS
+══════════════════════════════════════════ -->
 <section id="publications" class="section">
-  <h2>Publications</h2>
-  <div class="cards">
-    {% for pub in site.data.publications %}
-      {% include pub_card.html pub=pub %}
-    {% endfor %}
-  </div>
-</section>
-
-<section id="teaching" class="section">
-  <h2>Teaching</h2>
-  <div class="cards">
-    {% for t in site.data.teaching %}
-      {% include teach_card.html t=t %}
-    {% endfor %}
-  </div>
-</section>
-
-<section id="gallery" class="section">
-  <h2>Typography</h2>
-  <p class="muted">{{ site.data.profile.gallery_blurb }}</p>
-
-  <div class="carousel" data-carousel>
-    <button class="car-btn" data-prev aria-label="Previous">❮</button>
-    <div class="car-frame">
-      {% for g in site.data.gallery %}
-        <figure class="car-item{% if forloop.first %} is-active{% endif %}">
-          <img src="{{ g.image | relative_url }}" alt="{{ g.alt }}">
-        </figure>
+  <div class="wrap">
+    <div class="section-label fade-in">Research</div>
+    <h2 class="fade-in">Selected <em>publications</em></h2>
+    <div class="pubs">
+      {% for pub in site.data.publications %}
+        <div class="pub fade-in">
+          <div class="pub-thumb">
+            {% if pub.thumbnail %}
+              <img src="{{ pub.thumbnail | relative_url }}" alt="{{ pub.title }}">
+            {% else %}
+              ⊛
+            {% endif %}
+          </div>
+          <div class="pub-body">
+            {% if pub.venue %}
+              <div class="pub-venue">{{ pub.venue }}{% if pub.year %} · {{ pub.year }}{% endif %}</div>
+            {% endif %}
+            <div class="pub-title">{{ pub.title }}</div>
+            {% if pub.authors %}
+              <div class="pub-authors">{{ pub.authors }}</div>
+            {% endif %}
+            <div class="pub-links">
+              {% if pub.pdf %}<a href="{{ pub.pdf }}" target="_blank" rel="noreferrer">PDF ↗</a>{% endif %}
+              {% if pub.doi %}<a href="{{ pub.doi }}" target="_blank" rel="noreferrer">DOI ↗</a>{% endif %}
+              {% if pub.arxiv %}<a href="{{ pub.arxiv }}" target="_blank" rel="noreferrer">arXiv ↗</a>{% endif %}
+              {% if pub.code %}<a href="{{ pub.code }}" target="_blank" rel="noreferrer">Code ↗</a>{% endif %}
+              {% if pub.bibtex %}
+                <a href="#" class="cite-btn" data-bibtex="{{ pub.bibtex | escape }}">Cite</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
       {% endfor %}
     </div>
-    <button class="car-btn" data-next aria-label="Next">❯</button>
   </div>
 </section>
 
-<section id="vitae" class="section">
-  <h2>Vitæ</h2>
-  <p>Full CV in <a href="{{ site.data.profile.cv_url | relative_url }}" target="_blank" rel="noreferrer">PDF</a>.</p>
-  <ul class="vitae">
-    {% for v in site.data.vitae %}
-      <li>
-        <div class="vitae-top">
-          <span class="org">{{ v.org }}</span>
-          <span class="time">{{ v.start }} – {{ v.end }}</span>
-        </div>
-        <div class="vitae-mid">{{ v.position }}</div>
-        {% if v.unit %}<div class="vitae-sub">{{ v.unit }}</div>{% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+
+<!-- ══════════════════════════════════════════
+     TEACHING
+══════════════════════════════════════════ -->
+<section id="teaching" class="section">
+  <div class="wrap">
+    <div class="section-label fade-in">Teaching</div>
+    <h2 class="fade-in">Courses &amp; <em>instruction</em></h2>
+    <div class="cards">
+      {% for t in site.data.teaching %}
+        {% include teach_card.html t=t %}
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
+
+<!-- ══════════════════════════════════════════
+     GALLERY
+══════════════════════════════════════════ -->
+{% if site.data.gallery.size > 0 %}
+<section id="gallery" class="section">
+  <div class="wrap">
+    <div class="section-label fade-in">Gallery</div>
+    <h2 class="fade-in">Visual <em>work</em></h2>
+    {% if p.gallery_blurb %}
+      <p class="muted fade-in">{{ p.gallery_blurb }}</p>
+    {% endif %}
+
+    <div class="carousel fade-in" data-carousel>
+      <button class="car-btn" data-prev aria-label="Previous">❮</button>
+      <div class="car-frame">
+        <div class="car-track">
+          {% for g in site.data.gallery %}
+            <figure class="car-item{% if forloop.first %} is-active{% endif %}">
+              <img src="{{ g.image | relative_url }}" alt="{{ g.alt }}">
+              {% if g.caption %}
+                <figcaption>{{ g.caption }}</figcaption>
+              {% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+      </div>
+      <button class="car-btn" data-next aria-label="Next">❯</button>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+<!-- ══════════════════════════════════════════
+     VITAE
+══════════════════════════════════════════ -->
+<section id="vitae" class="section">
+  <div class="wrap">
+    <div class="section-label fade-in">Background</div>
+    <h2 class="fade-in">Curriculum <em>Vitæ</em></h2>
+
+    <ul class="vitae">
+      {% for v in site.data.vitae %}
+        <li class="fade-in">
+          <div class="vitae-top">
+            <span class="org">{{ v.org }}</span>
+            <span class="time">{{ v.start }}{% if v.end %} – {{ v.end }}{% endif %}</span>
+          </div>
+          <div class="vitae-mid">{{ v.position }}</div>
+          {% if v.unit %}<div class="vitae-sub">{{ v.unit }}</div>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% if p.cv_url %}
+      <div class="cvbox fade-in">
+        <div>
+          <div class="cvtitle">Full Curriculum Vitæ
+            <small>Detailed list of publications, talks, awards &amp; service</small>
+          </div>
+        </div>
+        <a href="{{ p.cv_url | relative_url }}" class="pill primary" target="_blank" rel="noreferrer">↓ Download PDF</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CONTACT CTA
+══════════════════════════════════════════ -->
+<section id="contact" class="section contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="section-label fade-in" style="justify-content:center;">Let's connect</div>
+      <h2 class="fade-in">Open to <em>collaborations</em></h2>
+      <p class="muted fade-in">
+        Whether it's a research question, a teaching opportunity, or an industry project — I'd love to hear from you.
+      </p>
+      {% if p.email %}
+        <a href="mailto:{{ p.email }}" class="pill primary fade-in">✉ Send me an email</a>
+      {% endif %}
+      <div class="contact-links fade-in fade-in-d1">
+        {% if p.scholar %}<a href="{{ p.scholar }}" class="pill" target="_blank" rel="noreferrer">Google Scholar ↗</a>{% endif %}
+        {% if p.github %}<a href="{{ p.github }}" class="pill" target="_blank" rel="noreferrer">GitHub ↗</a>{% endif %}
+        {% if p.linkedin %}<a href="{{ p.linkedin }}" class="pill" target="_blank" rel="noreferrer">LinkedIn ↗</a>{% endif %}
+        {% if p.twitter %}<a href="{{ p.twitter }}" class="pill" target="_blank" rel="noreferrer">Twitter ↗</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     BIBTEX MODAL
+══════════════════════════════════════════ -->
 <dialog id="bibtexModal" class="modal">
   <div class="modal-inner">
     <div class="modal-head">
@@ -92,3 +328,101 @@ layout: default
     </div>
   </div>
 </dialog>
+
+
+<!-- ══════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Scroll-triggered fade-in ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* Hero fires immediately on load */
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero .fade-in').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 100);
+    });
+  });
+
+  /* ── Active nav link on scroll ── */
+  const sections = document.querySelectorAll('section[id], div[id="about"]');
+  const navLinks = document.querySelectorAll('.nav a');
+  const scrollSpy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => scrollSpy.observe(s));
+
+  /* ── BibTeX modal ── */
+  const modal = document.getElementById('bibtexModal');
+  const bibtexText = document.getElementById('bibtexText');
+
+  document.querySelectorAll('.cite-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      bibtexText.textContent = btn.dataset.bibtex || '';
+      modal.showModal();
+    });
+  });
+
+  document.querySelectorAll('[data-close]').forEach(btn => {
+    btn.addEventListener('click', () => modal.close());
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) modal.close();
+  });
+
+  document.querySelector('[data-copy]')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(bibtexText.textContent)
+      .then(() => {
+        const btn = document.querySelector('[data-copy]');
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      });
+  });
+
+  /* ── Gallery carousel ── */
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.car-track');
+    const items = carousel.querySelectorAll('.car-item');
+    if (!track || !items.length) return;
+    let idx = 0;
+    const go = (n) => {
+      items[idx].classList.remove('is-active');
+      idx = (n + items.length) % items.length;
+      items[idx].classList.add('is-active');
+      track.style.transform = `translateX(-${idx * 100}%)`;
+    };
+    carousel.querySelector('[data-prev]')?.addEventListener('click', () => go(idx - 1));
+    carousel.querySelector('[data-next]')?.addEventListener('click', () => go(idx + 1));
+    /* Auto-advance */
+    setInterval(() => go(idx + 1), 5000);
+  });
+
+  /* ── Theme toggle ── */
+  const themeBtn = document.getElementById('themeBtn');
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved) root.setAttribute('data-theme', saved);
+  themeBtn?.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeBtn.textContent = next === 'dark' ? '☀' : '☾';
+  });
+  if (saved === 'light' && themeBtn) themeBtn.textContent = '☾';
+
+})();
+</script>
