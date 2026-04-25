@@ -95,25 +95,30 @@ layout: default
           </ul>
         {% endif %}
 
-        {% if p.skills %}
-          <div class="tagcloud fade-in">
-            {% for skill in p.skills %}
-              <span>{{ skill }}</span>
-            {% endfor %}
-          </div>
-        {% else %}
-          <div class="tagcloud fade-in">
-            <span>Optimal Control</span>
-            <span>MPC</span>
-            <span>Navigation</span>
-            <span>Guidance Systems</span>
-            <span>Python</span>
-            <span>MATLAB</span>
-            <span>C++</span>
-            <span>Research</span>
-            <span>LaTeX</span>
-          </div>
-        {% endif %}
+          {% if p.skills %}
+            <div class="tagcloud fade-in">
+              {% for skill in p.skills %}
+                <span>{{ skill }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="tagcloud fade-in">
+              <span>Optimal Control</span>
+              <span>Nonlinear Optimization</span>
+              <span>Safe Trajectory Generation</span>
+              <span>Motion Planning</span>
+              <span>PINNs</span>
+              <span>MPC</span>
+              <span>Aerospace GNC</span>
+              <span>ROS2</span>
+              <span>Gazebo</span>
+              <span>Unity</span>
+              <span>Python</span>
+              <span>MATLAB</span>
+              <span>C++</span>
+              <span>LaTeX</span>
+            </div>
+          {% endif %}
       </div><!-- /about-text -->
 
       <div class="about-right">
