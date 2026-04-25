@@ -14,15 +14,30 @@ links:
     url: "https://www.linkedin.com/"
   - label: Instagram
     url: "https://www.instagram.com/"
-
 about_paragraphs:
-  - "I work on autonomous planetary landing guidance with an emphasis on fuel efficiency and safety under constraints. My recent work spans free-final-time optimization, bounded thrust, thrust-lag modeling, and closed-form guidance law developed from OCP; validated in simulation with terrain and navigation uncertainty."
-  - "I am interested in the interface between optimal control, real-time guidance, and PINNs, especially where hard constraints must be enforced online."
+  - >-
+    I am Abhishek Barad, a researcher and engineer working at the intersection
+    of optimal control, aerospace guidance, and autonomous systems. My work has
+    focused on applying optimal control theory to real-world challenges —
+    including planetary soft landing and safe trajectory generation for
+    spacecraft operating in uncertain environments.
+  - >-
+    Beyond aerospace, I am deeply interested in Robotics — particularly in
+    bridging the gap between theoretical control methods and physical robotic
+    systems. I have hands-on experience with ROS2 and Gazebo for simulation
+    and deployment, as well as Unity for building interactive 3D environments
+    and hardware-in-the-loop testing scenarios.
+  - >-
+    I enjoy working on problems that sit at the edge of what's understood —
+    where rigorous mathematics meets real engineering constraints. If you are
+    working on something at that intersection, I would love to connect.
 
 keywords:
-  - "Free-final-time guidance and fuel-efficient descent"
-  - "Constrained thrust(non-zero lower bound)"
-  - "Closed-form guidance law for on-board use"
-  - "Barrier-formation for collision avoidance"
+  - "Optimal Control Theory & Nonlinear Optimization"
+  - "Safe Trajectory Generation & Motion Planning"
+  - "Physics-Informed Neural Networks (PINNs)"
+  - "Aerospace Guidance, Navigation & Control"
+  - "Model Predictive Control (MPC)"
+  - "Robotics — ROS2, Gazebo, Unity"
 
 gallery_blurb: "A small gallery section"
