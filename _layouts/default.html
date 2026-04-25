@@ -1,18 +1,73 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ site.title }}</title>
-  <meta name="description" content="{{ site.description | escape }}" />
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title | default: "Abhishek Barad" }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="Abhishek Barad">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ site.title | default: 'Abhishek Barad' }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
-  {% include header.html %}
-  <main class="wrap">
-    {{ content }}
-    {% include footer.html %}
-  </main>
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+<!-- ══════════════════════════════════════════
+     TOP NAV
+══════════════════════════════════════════ -->
+<header class="top">
+  <div class="wrap">
+    <div class="nav-inner">
+      <span class="nav-logo">Abhishek Barad</span>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        {% if site.data.gallery.size > 0 %}
+          <a href="#gallery">Gallery</a>
+        {% endif %}
+        <a href="#vitae">Vitæ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════ -->
+<main>
+  {{ content }}
+</main>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;width:100%;">
+    <span>© {{ 'now' | date: "%Y" }} Abhishek Barad</span>
+    <span style="letter-spacing:0.04em;">
+      Aerospace · Guidance &amp; Control · MPC · Navigation
+    </span>
+    <a href="{{ site.data.profile.cv_url | relative_url }}" target="_blank" rel="noreferrer">Curriculum Vitæ ↗</a>
+  </div>
+</footer>
+
+<!-- Page-level script loaded via index.html -->
 </body>
 </html>
