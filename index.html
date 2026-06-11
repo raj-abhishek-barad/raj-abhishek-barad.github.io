@@ -1,433 +1,527 @@
----
-layout: default
----
-{% assign p = site.data.profile %}
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Abhishek Barad — M.S. Researcher in Aerospace GNC at IIT Madras. Spacecraft guidance, optimal control, autonomous systems.">
+<title>Abhishek Barad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ─── TOKENS ─────────────────────────────────────────── */
+  :root {
+    --bg:       #0f0f10;
+    --bg2:      #161618;
+    --border:   #2a2a2d;
+    --muted:    #6b6b72;
+    --text:     #d4d4d8;
+    --heading:  #f0f0f2;
+    --accent:   #7c9dbf;   /* muted orbital blue */
+    --accent2:  #b5a27a;   /* warm gold for italics / year markers */
+    --sans:     'Inter', system-ui, sans-serif;
+    --serif:    'Lora', Georgia, serif;
+  }
+  [data-theme="light"] {
+    --bg:       #f8f7f4;
+    --bg2:      #efefeb;
+    --border:   #ddddd8;
+    --muted:    #888882;
+    --text:     #3a3a3c;
+    --heading:  #18181a;
+    --accent:   #4a6fa5;
+    --accent2:  #8a6e3a;
+  }
 
-<!-- ══════════════════════════════════════════
-     HERO
-══════════════════════════════════════════ -->
-<div class="hero">
-  <div class="bg-glyph hero-bg-glyph" aria-hidden="true">AB</div>
-  <div class="wrap">
-    <div class="hero-grid">
+  /* ─── RESET ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; display: block; }
 
-      <div class="hero-left">
-        <span class="hero-eyebrow fade-in">
-          Aerospace · Guidance &amp; Control
-        </span>
+  /* ─── LAYOUT ─────────────────────────────────────────── */
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
 
-        <h1 class="hero-name fade-in fade-in-d1">
-          Abhishek<br><em>Barad</em>
-        </h1>
+  /* ─── NAV ────────────────────────────────────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+  }
+  .nav-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--heading);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-right: auto;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .nav-links a {
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--heading); text-decoration: none; }
+  #themeBtn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    transition: color 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+  }
+  #themeBtn:hover { color: var(--heading); border-color: var(--muted); }
 
-        <p class="hero-field fade-in fade-in-d2">
-          {{ p.tagline | default: "Researcher · Engineer · Educator" }}
-        </p>
+  /* ─── HEADER ─────────────────────────────────────────── */
+  header {
+    padding: 5rem 0 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1.1rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    line-height: 1.15;
+    color: var(--heading);
+    margin-bottom: 1rem;
+  }
+  h1 em { font-style: italic; color: var(--accent2); }
 
-        <p class="hero-desc fade-in fade-in-d3">
-          {{ p.about_paragraphs[0] | default: "I work at the intersection of optimal control, model predictive control, and aerospace navigation — building guidance systems that are both rigorous and practical." }}
-        </p>
+  .header-desc {
+    max-width: 540px;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 1.8rem;
+    line-height: 1.75;
+  }
+  .links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 0.82rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--muted);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .pill:hover {
+    color: var(--heading);
+    border-color: var(--muted);
+    text-decoration: none;
+  }
+  .pill.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .pill.primary:hover { opacity: 0.88; }
 
-        <div class="hero-links fade-in fade-in-d4">
-          {% if p.email %}
-            <a href="mailto:{{ p.email }}" class="pill primary">✉ Email me</a>
-          {% endif %}
-          {% if p.cv_url %}
-            <a href="{{ p.cv_url | relative_url }}" class="pill" target="_blank" rel="noreferrer">↓ Curriculum Vitæ</a>
-          {% endif %}
-          {% if p.scholar %}
-            <a href="{{ p.scholar }}" class="pill" target="_blank" rel="noreferrer">Scholar ↗</a>
-          {% endif %}
-          {% if p.github %}
-            <a href="{{ p.github }}" class="pill" target="_blank" rel="noreferrer">GitHub ↗</a>
-          {% endif %}
-          {% if p.linkedin %}
-            <a href="{{ p.linkedin }}" class="pill" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          {% endif %}
-          {% if p.twitter %}
-            <a href="{{ p.twitter }}" class="pill" target="_blank" rel="noreferrer">Twitter ↗</a>
-          {% endif %}
-        </div>
-      </div><!-- /hero-left -->
+  /* ─── SECTION ────────────────────────────────────────── */
+  section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 0.4rem;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--heading);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  h2 em { font-style: italic; color: var(--accent2); }
+  p { margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
 
-      <div class="hero-right fade-in fade-in-d2">
-        <div class="avatar-frame">
-          {% if p.avatar %}
-            <div class="avatar-border"></div>
-            <img src="{{ p.avatar | relative_url }}" alt="Photo of Abhishek Barad">
-          {% else %}
-            <div class="avatar-border"></div>
-            <div class="avatar-inner">
-              <span class="avatar-initials">AB</span>
-              <span class="avatar-label">Abhishek Barad</span>
-            </div>
-          {% endif %}
-          <div class="avatar-corner-br"></div>
-          <div class="avatar-corner-tl"></div>
-        </div>
-      </div>
+  /* ─── INTERESTS ROW ──────────────────────────────────── */
+  .interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+  .tag {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
 
-    </div><!-- /hero-grid -->
-  </div><!-- /wrap -->
-</div><!-- /hero -->
+  /* ─── CHAPTERS (timeline) ────────────────────────────── */
+  .chapters { display: flex; flex-direction: column; gap: 0; }
+  .chapter {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter:last-child { border-bottom: 1px solid var(--border); }
+  .chapter-meta {
+    padding-top: 0.15rem;
+  }
+  .chapter-year {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--accent2);
+    font-family: var(--serif);
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .chapter-loc {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .chapter-body {}
+  .chapter-org {
+    font-weight: 600;
+    color: var(--heading);
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+  .chapter-role {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .chapter-desc {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .chapter-aside {
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--muted);
+  }
 
+  /* ─── PUBLICATIONS ───────────────────────────────────── */
+  .pubs { display: flex; flex-direction: column; gap: 1.25rem; }
+  .pub {
+    padding: 1.25rem;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .pub-venue {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 0.35rem;
+  }
+  .pub-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--heading);
+    line-height: 1.45;
+    margin-bottom: 0.35rem;
+  }
+  .pub-authors {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .pub-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .pub-links a {
+    font-size: 0.78rem;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    transition: border-color 0.15s;
+  }
+  .pub-links a:hover { border-color: var(--accent); text-decoration: none; }
 
-<!-- ══════════════════════════════════════════
-     ABOUT
-══════════════════════════════════════════ -->
-<section id="about" class="section">
-  <div class="wrap">
+  /* ─── NEWS ───────────────────────────────────────────── */
+  .news { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .news li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 1rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .news li:last-child { border-bottom: 1px solid var(--border); }
+  .news-date { color: var(--accent2); font-size: 0.8rem; font-family: var(--serif); font-style: italic; padding-top: 0.05rem; }
+  .news-text { color: var(--text); }
 
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-label fade-in">About</div>
-        <h2 class="fade-in">A little <em>about</em> me</h2>
+  /* ─── FOOTER ─────────────────────────────────────────── */
+  footer {
+    padding: 2.5rem 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
 
-        {% for para in p.about_paragraphs %}
-          <p class="fade-in">{{ para }}</p>
-        {% endfor %}
+  /* ─── RESPONSIVE ─────────────────────────────────────── */
+  @media (max-width: 540px) {
+    .nav-links { display: none; }
+    .chapter { grid-template-columns: 1fr; gap: 0.25rem; }
+    .chapter-meta { display: flex; gap: 0.75rem; align-items: baseline; }
+    .news li { grid-template-columns: 1fr; gap: 0.15rem; }
+  }
+</style>
+</head>
+<body>
 
-        {% if p.keywords %}
-          <ul class="bullets fade-in">
-            {% for k in p.keywords %}
-              <li>{{ k }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-          {% if p.skills %}
-            <div class="tagcloud fade-in">
-              {% for skill in p.skills %}
-                <span>{{ skill }}</span>
-              {% endfor %}
-            </div>
-          {% else %}
-            <div class="tagcloud fade-in">
-              <span>Optimal Control</span>
-              <span>Nonlinear Optimization</span>
-              <span>Safe Trajectory Generation</span>
-              <span>Motion Planning</span>
-              <span>PINNs</span>
-              <span>MPC</span>
-              <span>Aerospace GNC</span>
-              <span>ROS2</span>
-              <span>Gazebo</span>
-              <span>Unity</span>
-              <span>Python</span>
-              <span>MATLAB</span>
-              <span>C++</span>
-              <span>LaTeX</span>
-            </div>
-          {% endif %}
-      </div><!-- /about-text -->
-
-      <div class="about-right">
-        <div class="about-stats">
-          <div class="stat-card fade-in">
-            <span class="stat-num">{{ p.stats.papers | default: "—" }}</span>
-            <span class="stat-label">Publications</span>
-          </div>
-          <div class="stat-card fade-in fade-in-d1">
-            <span class="stat-num">{{ p.stats.years | default: "—" }}</span>
-            <span class="stat-label">Years research</span>
-          </div>
-          <div class="stat-card fade-in fade-in-d2">
-            <span class="stat-num">{{ p.stats.courses | default: "—" }}</span>
-            <span class="stat-label">Courses taught</span>
-          </div>
-          <div class="stat-card fade-in fade-in-d3">
-            <span class="stat-num">{{ p.stats.institutes | default: "—" }}</span>
-            <span class="stat-label">Institutions</span>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /about-grid -->
-  </div><!-- /wrap -->
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     NEWS
-══════════════════════════════════════════ -->
-<section id="news" class="section">
-  <div class="wrap">
-    <div class="section-label fade-in">Latest</div>
-    <h2 class="fade-in">News &amp; <em>updates</em></h2>
-    <ul class="news">
-      {% for n in site.data.news %}
-        <li class="fade-in">
-          <span class="date">{{ n.date }}</span>
-          <span class="news-text">{{ n.text }}</span>
-        </li>
-      {% endfor %}
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Abhishek Barad</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#background">Background</a></li>
     </ul>
+    <button id="themeBtn" aria-label="Toggle theme">☾</button>
   </div>
+</nav>
+
+<!-- ── HEADER ────────────────────────────────────────────── -->
+<header>
+<div class="wrap">
+  <div class="header-eyebrow">Aerospace · Guidance &amp; Control</div>
+  <h1>Abhishek<br><em>Barad</em></h1>
+  <p class="header-desc">
+    M.S. (Research) scholar at IIT Madras, working on fuel-efficient autonomous spacecraft landing.
+    I build guidance laws that are both theoretically provable and practically flyable — funded by ISRO.
+  </p>
+  <div class="links-row">
+    <a class="pill primary" href="mailto:abhishek.barad@example.com">✉ Email</a>
+    <a class="pill" href="assets/cv.pdf" target="_blank">↓ CV</a>
+    <a class="pill" href="https://scholar.google.com" target="_blank">Scholar ↗</a>
+    <a class="pill" href="https://github.com/raj-abhishek-barad" target="_blank">GitHub ↗</a>
+    <a class="pill" href="https://linkedin.com/in/abhishek-barad" target="_blank">LinkedIn ↗</a>
+  </div>
+</div>
+</header>
+
+<!-- ── ABOUT ─────────────────────────────────────────────── -->
+<section id="about">
+<div class="wrap">
+  <div class="section-label">About</div>
+  <h2>A little <em>about</em> me</h2>
+  <p>
+    I study how spacecraft can land themselves — accurately, safely, and with minimal fuel —
+    under Dr. Satadal Ghosh at the <a href="https://www.iitm.ac.in" target="_blank">Indian Institute of Technology Madras</a>.
+    My research combines zero-effort-miss / zero-effort-velocity (ZEM/ZEV) guidance with
+    velocity-aware barrier penalties and sliding-mode robustness, targeting the kind of
+    terrain-aware powered descent you'd need for a Moon or Mars mission.
+  </p>
+  <p>
+    Alongside spacecraft GNC, I'm drawn to ground robotics — particularly safe motion planning
+    and perception-aware navigation — and I enjoy building full-stack simulations in ROS 2 and Gazebo
+    to close the loop between theory and hardware.
+  </p>
+  <p>
+    When I'm not debugging quaternion conventions or staring at phase portraits, I'm probably
+    reading about control theory or thinking about how autonomous systems fail gracefully.
+  </p>
+  <div class="interest-tags">
+    <span class="tag">Optimal Control</span>
+    <span class="tag">Spacecraft GNC</span>
+    <span class="tag">Safe Trajectory Generation</span>
+    <span class="tag">MPC</span>
+    <span class="tag">Sliding Mode Control</span>
+    <span class="tag">ZEM/ZEV Guidance</span>
+    <span class="tag">ROS 2</span>
+    <span class="tag">Gazebo</span>
+    <span class="tag">Python · MATLAB · C++</span>
+    <span class="tag">Autonomous Systems</span>
+  </div>
+</div>
 </section>
 
-
-<!-- ══════════════════════════════════════════
-     PUBLICATIONS
-══════════════════════════════════════════ -->
-<section id="publications" class="section">
-  <div class="wrap">
-    <div class="section-label fade-in">Research</div>
-    <h2 class="fade-in">Selected <em>publications</em></h2>
-    <div class="pubs">
-      {% for pub in site.data.publications %}
-        <div class="pub fade-in">
-          <div class="pub-thumb">
-            {% if pub.thumbnail %}
-              <img src="{{ pub.thumbnail | relative_url }}" alt="{{ pub.title }}">
-            {% else %}
-              ⊛
-            {% endif %}
-          </div>
-          <div class="pub-body">
-            {% if pub.venue %}
-              <div class="pub-venue">{{ pub.venue }}{% if pub.year %} · {{ pub.year }}{% endif %}</div>
-            {% endif %}
-            <div class="pub-title">{{ pub.title }}</div>
-            {% if pub.authors %}
-              <div class="pub-authors">{{ pub.authors }}</div>
-            {% endif %}
-            <div class="pub-links">
-              {% if pub.pdf %}<a href="{{ pub.pdf }}" target="_blank" rel="noreferrer">PDF ↗</a>{% endif %}
-              {% if pub.doi %}<a href="{{ pub.doi }}" target="_blank" rel="noreferrer">DOI ↗</a>{% endif %}
-              {% if pub.arxiv %}<a href="{{ pub.arxiv }}" target="_blank" rel="noreferrer">arXiv ↗</a>{% endif %}
-              {% if pub.code %}<a href="{{ pub.code }}" target="_blank" rel="noreferrer">Code ↗</a>{% endif %}
-              {% if pub.bibtex %}
-                <a href="#" class="cite-btn" data-bibtex="{{ pub.bibtex | escape }}">Cite</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
+<!-- ── NEWS ──────────────────────────────────────────────── -->
+<section id="news">
+<div class="wrap">
+  <div class="section-label">Latest</div>
+  <h2>News &amp; <em>updates</em></h2>
+  <ul class="news">
+    <li>
+      <span class="news-date">Jun 2026</span>
+      <span class="news-text">Paper accepted at <strong>MED 2026</strong> — extending terrain-aware powered descent with velocity-aware barrier penalties.</span>
+    </li>
+    <li>
+      <span class="news-date">Dec 2025</span>
+      <span class="news-text">Presented at <strong>IEEE CDC 2025</strong>. Paper on free-final-time, fuel-efficient landing guidance with obstacle avoidance.</span>
+    </li>
+    <li>
+      <span class="news-date">2024</span>
+      <span class="news-text">Research funded by <strong>ISRO</strong> under the Space Technology Cell at IIT Madras.</span>
+    </li>
+    <li>
+      <span class="news-date">2023</span>
+      <span class="news-text">Joined the GNC Lab at IIT Madras as an M.S. (Research) student under Dr. Satadal Ghosh.</span>
+    </li>
+  </ul>
+</div>
 </section>
 
+<!-- ── PUBLICATIONS ──────────────────────────────────────── -->
+<section id="publications">
+<div class="wrap">
+  <div class="section-label">Research</div>
+  <h2>Selected <em>publications</em></h2>
+  <div class="pubs">
 
-<!-- ══════════════════════════════════════════
-     TEACHING
-══════════════════════════════════════════ -->
-<section id="teaching" class="section">
-  <div class="wrap">
-    <div class="section-label fade-in">Teaching</div>
-    <h2 class="fade-in">Courses &amp; <em>instruction</em></h2>
-    <div class="cards">
-      {% for t in site.data.teaching %}
-        {% include teach_card.html t=t %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     GALLERY
-══════════════════════════════════════════ -->
-{% if site.data.gallery.size > 0 %}
-<section id="gallery" class="section">
-  <div class="wrap">
-    <div class="section-label fade-in">Gallery</div>
-    <h2 class="fade-in">Visual <em>work</em></h2>
-    {% if p.gallery_blurb %}
-      <p class="muted fade-in">{{ p.gallery_blurb }}</p>
-    {% endif %}
-
-    <div class="carousel fade-in" data-carousel>
-      <button class="car-btn" data-prev aria-label="Previous">❮</button>
-      <div class="car-frame">
-        <div class="car-track">
-          {% for g in site.data.gallery %}
-            <figure class="car-item{% if forloop.first %} is-active{% endif %}">
-              <img src="{{ g.image | relative_url }}" alt="{{ g.alt }}">
-              {% if g.caption %}
-                <figcaption>{{ g.caption }}</figcaption>
-              {% endif %}
-            </figure>
-          {% endfor %}
-        </div>
+    <div class="pub">
+      <div class="pub-venue">MED 2026 &middot; Accepted</div>
+      <div class="pub-title">
+        Terrain-Aware Powered Descent Guidance with Velocity-Aware Barrier Penalties and Sliding-Mode Robustness
       </div>
-      <button class="car-btn" data-next aria-label="Next">❯</button>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-
-<!-- ══════════════════════════════════════════
-     VITAE
-══════════════════════════════════════════ -->
-<section id="vitae" class="section">
-  <div class="wrap">
-    <div class="section-label fade-in">Background</div>
-    <h2 class="fade-in">Curriculum <em>Vitæ</em></h2>
-
-    <ul class="vitae">
-      {% for v in site.data.vitae %}
-        <li class="fade-in">
-          <div class="vitae-top">
-            <span class="org">{{ v.org }}</span>
-            <span class="time">{{ v.start }}{% if v.end %} – {{ v.end }}{% endif %}</span>
-          </div>
-          <div class="vitae-mid">{{ v.position }}</div>
-          {% if v.unit %}<div class="vitae-sub">{{ v.unit }}</div>{% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-
-    {% if p.cv_url %}
-      <div class="cvbox fade-in">
-        <div>
-          <div class="cvtitle">Full Curriculum Vitæ
-            <small>Detailed list of publications, talks, awards &amp; service</small>
-          </div>
-        </div>
-        <a href="{{ p.cv_url | relative_url }}" class="pill primary" target="_blank" rel="noreferrer">↓ Download PDF</a>
-      </div>
-    {% endif %}
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     CONTACT CTA
-══════════════════════════════════════════ -->
-<section id="contact" class="section contact">
-  <div class="wrap">
-    <div class="contact-inner">
-      <div class="section-label fade-in" style="justify-content:center;">Let's connect</div>
-      <h2 class="fade-in">Open to <em>collaborations</em></h2>
-      <p class="muted fade-in">
-        Whether it's a research question, a teaching opportunity, or an industry project — I'd love to hear from you.
-      </p>
-      {% if p.email %}
-        <a href="mailto:{{ p.email }}" class="pill primary fade-in">✉ Send me an email</a>
-      {% endif %}
-      <div class="contact-links fade-in fade-in-d1">
-        {% if p.scholar %}<a href="{{ p.scholar }}" class="pill" target="_blank" rel="noreferrer">Google Scholar ↗</a>{% endif %}
-        {% if p.github %}<a href="{{ p.github }}" class="pill" target="_blank" rel="noreferrer">GitHub ↗</a>{% endif %}
-        {% if p.linkedin %}<a href="{{ p.linkedin }}" class="pill" target="_blank" rel="noreferrer">LinkedIn ↗</a>{% endif %}
-        {% if p.twitter %}<a href="{{ p.twitter }}" class="pill" target="_blank" rel="noreferrer">Twitter ↗</a>{% endif %}
+      <div class="pub-authors">Abhishek Barad, Satadal Ghosh</div>
+      <div class="pub-links">
+        <a href="#">PDF ↗</a>
+        <a href="#">arXiv ↗</a>
       </div>
     </div>
+
+    <div class="pub">
+      <div class="pub-venue">IEEE CDC 2025</div>
+      <div class="pub-title">
+        Free-Final-Time Fuel-Efficient Powered Descent Guidance with Terrain Awareness
+      </div>
+      <div class="pub-authors">Abhishek Barad, Satadal Ghosh</div>
+      <div class="pub-links">
+        <a href="#">PDF ↗</a>
+        <a href="#">DOI ↗</a>
+        <a href="#">arXiv ↗</a>
+      </div>
+    </div>
+
   </div>
+</div>
 </section>
 
+<!-- ── BACKGROUND ────────────────────────────────────────── -->
+<section id="background">
+<div class="wrap">
+  <div class="section-label">Background</div>
+  <h2>Where I've <em>been</em></h2>
+  <div class="chapters">
 
-<!-- ══════════════════════════════════════════
-     BIBTEX MODAL
-══════════════════════════════════════════ -->
-<dialog id="bibtexModal" class="modal">
-  <div class="modal-inner">
-    <div class="modal-head">
-      <div class="modal-title">BibTeX</div>
-      <button class="modal-x" data-close aria-label="Close">✕</button>
+    <div class="chapter">
+      <div class="chapter-meta">
+        <div class="chapter-year">2023 – present</div>
+        <div class="chapter-loc">Chennai, India</div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-org">IIT Madras</div>
+        <div class="chapter-role">M.S. (Research) · Aerospace Engineering</div>
+        <div class="chapter-desc">
+          Working on guidance, navigation, and control for autonomous planetary landing under Dr. Satadal Ghosh.
+          Research spans closed-form ZEM/ZEV guidance, barrier-function-based obstacle avoidance,
+          sliding-mode robustness augmentation, and receding-horizon time adaptation —
+          all targeting fuel-efficient, terrain-aware powered descent.
+        </div>
+        <div class="chapter-aside">Funded by ISRO Space Technology Cell.</div>
+      </div>
     </div>
-    <pre id="bibtexText"></pre>
-    <div class="modal-actions">
-      <button class="btn" data-copy>Copy</button>
-      <button class="btn ghost" data-close>Close</button>
+
+    <div class="chapter">
+      <div class="chapter-meta">
+        <div class="chapter-year">2018 – 2022</div>
+        <div class="chapter-loc">India</div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-org">B.Tech · Electrical Engineering</div>
+        <div class="chapter-role">Undergraduate</div>
+        <div class="chapter-desc">
+          Developed interests in dynamics, control systems, and robotics.
+          Built foundational skills in MATLAB, Python, and simulation — eventually leading to
+          a focused research path in spacecraft GNC.
+        </div>
+      </div>
     </div>
+
   </div>
-</dialog>
+</div>
+</section>
 
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <p>Abhishek Barad · IIT Madras · <a href="mailto:abhishek.barad@example.com">email</a> · <a href="https://github.com/raj-abhishek-barad" target="_blank">github</a></p>
+    <p style="margin-top:0.3rem;">Built with HTML &amp; CSS — no framework, no build step.</p>
+  </div>
+</footer>
 
-<!-- ══════════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════════ -->
 <script>
-(function () {
-  'use strict';
-
-  /* ── Scroll-triggered fade-in ── */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  /* Hero fires immediately on load */
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.hero .fade-in').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), i * 100);
-    });
-  });
-
-  /* ── Active nav link on scroll ── */
-  const sections = document.querySelectorAll('section[id], div[id="about"]');
-  const navLinks = document.querySelectorAll('.nav a');
-  const scrollSpy = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(a => {
-          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(s => scrollSpy.observe(s));
-
-  /* ── BibTeX modal ── */
-  const modal = document.getElementById('bibtexModal');
-  const bibtexText = document.getElementById('bibtexText');
-
-  document.querySelectorAll('.cite-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      bibtexText.textContent = btn.dataset.bibtex || '';
-      modal.showModal();
-    });
-  });
-
-  document.querySelectorAll('[data-close]').forEach(btn => {
-    btn.addEventListener('click', () => modal.close());
-  });
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal) modal.close();
-  });
-
-  document.querySelector('[data-copy]')?.addEventListener('click', () => {
-    navigator.clipboard.writeText(bibtexText.textContent)
-      .then(() => {
-        const btn = document.querySelector('[data-copy]');
-        btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-      });
-  });
-
-  /* ── Gallery carousel ── */
-  document.querySelectorAll('[data-carousel]').forEach(carousel => {
-    const track = carousel.querySelector('.car-track');
-    const items = carousel.querySelectorAll('.car-item');
-    if (!track || !items.length) return;
-    let idx = 0;
-    const go = (n) => {
-      items[idx].classList.remove('is-active');
-      idx = (n + items.length) % items.length;
-      items[idx].classList.add('is-active');
-      track.style.transform = `translateX(-${idx * 100}%)`;
-    };
-    carousel.querySelector('[data-prev]')?.addEventListener('click', () => go(idx - 1));
-    carousel.querySelector('[data-next]')?.addEventListener('click', () => go(idx + 1));
-    /* Auto-advance */
-    setInterval(() => go(idx + 1), 5000);
-  });
-
-  /* ── Theme toggle ── */
-  const themeBtn = document.getElementById('themeBtn');
+  const btn = document.getElementById('themeBtn');
   const root = document.documentElement;
   const saved = localStorage.getItem('theme');
-  if (saved) root.setAttribute('data-theme', saved);
-  themeBtn?.addEventListener('click', () => {
+  if (saved) {
+    root.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? '☾' : '☀';
+  }
+  btn.addEventListener('click', () => {
     const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-    themeBtn.textContent = next === 'dark' ? '☀' : '☾';
+    btn.textContent = next === 'dark' ? '☾' : '☀';
   });
-  if (saved === 'light' && themeBtn) themeBtn.textContent = '☾';
-
-})();
 </script>
+</body>
+</html>
